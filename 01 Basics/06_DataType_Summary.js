@@ -50,3 +50,27 @@ const myFunction = function () {
    console.log("hello world");
 };
 console.log(typeof myFunction); // function
+
+//! Memory allocation: Stack vs Heap
+
+//* Stack (Primitive data type) Memory
+
+let myName = "Mohit";
+
+let otherName = myName;
+otherName = "Amit";
+
+console.log(myName); //Output: Mohit
+console.log(otherName); //Output: Amit
+
+//* Heap (Non-primitive data type) Memory
+
+let userOne = {
+   name: "Mohit",
+   age: 25,
+};
+
+let userTwo = userOne;
+userTwo.name = "Amit";
+console.log(userOne.name); //Output: Amit
+console.log(userTwo.name); //Output: Amit
