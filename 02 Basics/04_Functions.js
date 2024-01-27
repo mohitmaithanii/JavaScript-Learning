@@ -59,3 +59,48 @@ function loginUserMessage(username = "Amit") {
 }
 
 console.log(loginUserMessage()); // Output: Amit just logged in
+
+//! Functions with More Parameters
+
+// Function that takes multiple parameters and returns an array of those parameters
+function calculatePrice(...num1) {
+   return num1;
+}
+
+console.log(calculatePrice(200)); // Output:  [200]
+console.log(calculatePrice(200, 400, 500)); // Output:  [200, 400, 500]
+
+function calculatePrice(val1, val2, ...num1) {
+   return num1;
+}
+console.log(calculatePrice(200, 400, 500, 2000)); // Output: [ 500, 2000 ]
+
+//! Functions with Object:
+
+const user = {
+   username: "mohit",
+   id: 1221,
+};
+
+// Function that takes an object as a parameter and prints its properties
+function handleObject(anyObject) {
+   console.log(`Username is ${anyObject.username} and id is ${anyObject.id}`);
+}
+
+handleObject(user); // Output: Username is mohit and id is 1221
+
+handleObject({
+   username: "amit",
+   id: 1333,
+});
+
+//! Functions with Array:
+
+const myArray = [200, 400, 500, 600];
+
+function returnSecondValue(getArray) {
+   return getArray[1];
+}
+
+console.log(returnSecondValue(myArray)); // Output: 400
+console.log(returnSecondValue([200, 400, 500, 600])); // Output: 400
