@@ -28,3 +28,44 @@ console.log(`Outer: ${c}`); // Outer: 30
 // Declare another global variable with the same name
 let a = 300;
 console.log(`Another a: ${a}`); // Another a: 300
+
+//! Nested Scope:
+//* Nested scope occurs when a function is declared within another function. The inner function has access to the variables of the outer function, but the outer function does not have access to the variables of the inner function.
+
+function one() {
+   const username = "Mohit";
+
+   function two() {
+      const website = "Youtube";
+      console.log(username); // Mohit
+   }
+   console.log(website); // error: 'website' is not defined in this scope
+   two();
+}
+one();
+
+if (true) {
+   const username = "Mohit";
+
+   if (username === "Mohit") {
+      const website = " Youtube";
+      console.log(username + website); // Mohit Youtube
+   }
+   console.log(website); // error
+}
+console.log(username); // error
+
+//! Hoisting:
+//* Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of current scope during the compilation phase.
+
+console.log(addOne(5)); // 6 - The function declaration of 'addOne' is hoisted to the top of the current scope
+
+function addOne(num) {
+   return num + 1;
+}
+
+console.log(addTwo(5)); // error : Cannot access 'addTwo' before initialization - The variable declaration of 'addTwo' is hoisted to the top of the current scope, but the assignment is not
+
+const addTwo = function (num) {
+   return num + 2;
+};
