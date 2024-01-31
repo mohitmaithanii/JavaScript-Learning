@@ -51,3 +51,31 @@ const loggedInFromEmail = true;
 if (loggedInFromGoogle || loggedInFromEmail) {
    console.log("user logged in");
 }
+
+//! Nullish Coalescing Operator (??): Null undefined
+
+// The nullish coalescing operator??) returns the right-hand side operand if the left-hand side operand null or undefined.
+
+let val1;
+val1 = 5 ?? 10; // If val1 is not null or undefined, use its value (5). Otherwise, use the value after the ?? (10).
+console.log(val1); // Output : 5
+
+val1 = null ?? 10;
+console.log(val1); // Output : 10
+
+val1 = undefined ?? 15;
+console.log(val1); // Output: 15
+
+val1 = null ?? 10 ?? 20;
+console.log(val1); // Output: 10
+
+//! Ternary Operator:
+// The ternary operator is a shorthand way of writing an if-else statement.
+
+//* syntax: condition ? true : false
+
+const iceTeaPrice = 100;
+
+iceTeaPrice <= 80 // If the condition is true
+   ? console.log("less than 80") // Run this code
+   : console.log("more than 80"); // Otherwise, run this code
