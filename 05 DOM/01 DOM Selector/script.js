@@ -54,3 +54,26 @@ turnGreen.innerText = "Turn Green!"
 
 // `document.querySelectorAll("li")`: This selector is used to select all <li> elements on the page. This method returns a static NodeList of all elements that match the specified selector.
 document.querySelectorAll("li")
+
+const tempLiList = document.querySelectorAll("li")
+tempLiList[0].style.color = "green"
+
+const myH1 = document.querySelectorAll("h1")
+myH1[0].style.color = "green"
+
+tempLiList.forEach(function (l) {
+    l.style.backgroundColor = "orange"
+})
+
+// getElementsByClassName();
+document.getElementsByClassName("list-item")
+
+const tempClassList = document.getElementsByClassName("list-item")
+// Converts the HTMLCollection to an array
+Array.from(tempClassList)
+
+const myConvertedArray = Array.from(tempClassList)
+myConvertedArray.forEach(function (li) {
+    li.style.color = "black"
+})
+
