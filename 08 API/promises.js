@@ -1,4 +1,4 @@
-// 1:
+// 1: Creating and consuming a Promise:
 const promiseOne = new Promise((resolve, reject) => {
 	// Do and async task
 	// DB calls, cryptography, network
@@ -12,7 +12,7 @@ promiseOne.then(() => {
 	console.log("Promise consumed");
 });
 
-// 2:
+// 2: Promise with an immediately resolved value:
 new Promise((resolve, reject) => {
 	setTimeout(() => {
 		console.log("Async task two");
@@ -22,7 +22,7 @@ new Promise((resolve, reject) => {
 	console.log("Async two resolved");
 });
 
-// 3:
+// 3: Promise with a resolved value:
 const promiseThree = new Promise((resolve, reject) => {
 	setTimeout(() => {
 		resolve({ username: "Mohit", id: 21212 });
@@ -33,10 +33,11 @@ promiseThree.then((user) => {
 	console.log(user);
 });
 
-// 4:
+// 4: Promise with a rejected value:
 const promiseFour = new Promise((resolve, reject) => {
 	setTimeout(() => {
 		let error = true;
+		// If an error is truthy, the Promise is rejected.
 		if (!error) {
 			resolve({ username: "Mohit", password: 1234 });
 		} else {
@@ -60,7 +61,7 @@ const username = promiseFour
 		console.log("the promise is ether resolved or rejected");
 	});
 
-// 5: async await:
+// 5: Promise using async/await:
 const promiseFive = new Promise((resolve, reject) => {
 	setTimeout(() => {
 		let error = true;
@@ -80,12 +81,13 @@ async function consumePromiseFive() {
 		console.log(error);
 	}
 }
-
+// If the Promise is rejected, the error is caught and logged.
 consumePromiseFive();
 
-// fetch:
+// Fetch API example:
 fetch("https://api.github.com/users/mohitmaithanii")
 	.then((response) => {
+		// The response is then parsed as JSON
 		return response.json();
 	})
 	.then((data) => {
