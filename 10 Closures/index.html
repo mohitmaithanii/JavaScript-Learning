@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Closures</title>
+	</head>
+	<body>
+		<button id="orange">Orange</button>
+		<button id="green">Green</button>
+	</body>
+
+	<script>
+		// 1: lexical scoping:
+
+		function outer() {
+			let username = "Mohit";
+			console.log(`Too Outer ${secret}`);
+			function inner() {
+				let secret = "my123";
+				console.log(`Inner ${username}`);
+			}
+			function innerTwo() {
+				console.log(`Inner two ${username}`);
+				console.log(`Inner two ${secret}`);
+			}
+			inner();
+			innerTwo();
+		}
+		// outer();
+		// console.log(`Too Outer ${username}`);
+
+		// closure:
+
+		function makeFunc() {
+			const name = "Mohit";
+			function displayName() {
+				console.log(name);
+			}
+			return displayName;
+		}
+		const myFunc = makeFunc();
+		// myFunc();
+	</script>
+
+	<script>
+		/*
+        practical example of closure:
+
+		    document.getElementById("orange").onclick = function () {
+			document.body.style.backgroundColor = "orange";
+		};
+		document.getElementById("green").onclick = function () {
+			document.body.style.backgroundColor = "green";
+		}; */
+
+		function clickHandler(color) {
+			return function () {
+				document.body.style.backgroundColor = `${color}`;
+			};
+		}
+		document.getElementById("orange").onclick = clickHandler("orange");
+		document.getElementById("green").onclick = clickHandler("green");
+	</script>
+</html>
