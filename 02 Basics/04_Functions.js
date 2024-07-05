@@ -1,6 +1,16 @@
 //! Functions and Parameters:
 //* A function is a block of code that performs a specific task.
 
+/* types of functions in Js :
+   1. function Statement
+   2. function Expression
+   3. function Declaration
+   4. Anonymous function 
+   5. Named function Expression 
+   6. First Class Functions 
+   7. Arrow Functions 
+*/
+
 // Define a simple function
 function sayMyName() {
    console.log("I am a function");
